@@ -1,0 +1,168 @@
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+
+  /* Landing page*/
+  .homeTransition-appear{
+    opacity: 0;
+  }
+   
+  .homeTransition-appear.homeTransition-appear-active{
+    opacity: 1;
+    transition: all .5s ease-in-out;
+  }
+.particles{
+    background: linear-gradient(45deg,#130c31,rgb(64, 40, 76));
+
+}
+html,body{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.frontpage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+}
+.info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+}
+
+.front{
+    margin: 64px auto;
+    max-width: 640px;
+    width: 94%;
+    text-align: center;
+
+}
+
+.circle {
+    position: relative;
+    display: block;
+    margin: 2em 0;
+    background-color: transparent;
+    color: white;
+
+    text-align: center;
+}
+
+.circle:after {
+    display: block;
+    padding-bottom: 100%;
+    width: 100%;
+    height: 0;
+    border-radius: 50%;
+    color: #fff;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 15s ease infinite;
+    -moz-animation: Gradient 15s ease infinite;
+    animation: Gradient 15s ease infinite;
+    content: "";
+}
+@-webkit-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+.circle__inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.circle__wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.circle__content {
+    display: table-cell;
+    padding: 1em;
+    vertical-align: middle;
+}
+
+@media (min-width: 480px) {
+    .circle__content {
+        font-size: 2em;
+    }
+}
+
+@media (min-width: 768px) {
+    .circle__content {
+        font-size: 4em;
+    }
+}
+  /* ####### info page ######### */
+  .info-row{
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    position:"absolute";
+    padding:"40px"
+}
+.info-card-color{ background: "#2196f3"; padding: "3px" }
