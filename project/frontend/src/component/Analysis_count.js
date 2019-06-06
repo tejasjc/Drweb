@@ -143,7 +143,7 @@ export class Analysis_count extends Component {
             </Col>
             </div>
         </Row>
-        <Row gutter={16} style={{ marginTop: "20px" }} >
+        {/* <Row gutter={16} style={{ marginTop: "20px" }} >
         <div className="container">
             <Col span={12}>
             <CardJsAsync/>
@@ -152,7 +152,7 @@ export class Analysis_count extends Component {
             <CardCutCss/>
             </Col>
             </div>
-        </Row>
+        </Row> */}
         <Row style={{ marginTop: "20px" }}>
           <Col style={{ background: "#f0f2f5", padding: "10px" }}>
             <div>
@@ -177,7 +177,7 @@ export class Analysis_count extends Component {
             </Col>
             </div>
         </Row>
-        <Row gutter={16} style={{ marginTop: "20px" }} >
+        <Row gutter={16} style={{ marginTop: "20px" ,marginBottom:"20px"}} >
         <div className="container">
             <Col span={12}>
             <CardRblockCss/>

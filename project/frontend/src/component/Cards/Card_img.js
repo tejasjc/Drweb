@@ -49,7 +49,7 @@ export class CardImg extends Component {
       }
   render() {
     const text = 'Are you sure to initiate this task?';
-    const { isLoading, error,imagedata } = this.state;
+    const { isLoading,imagedata } = this.state;
     const om=[imagedata];
     var avgc=om.map(d => d.avg_comp)[0];
     var n=Number.parseFloat(Number(avgc)).toPrecision(4);

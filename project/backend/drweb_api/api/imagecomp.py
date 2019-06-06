@@ -37,6 +37,6 @@ def ImageCompressor(project_path):
                 compressMe(file,root, True)
                 tot+=dict['percentage'][-1]
     dict1['avg_comp']=float(tot)/num
-    return dict1
+    return [dict1,dict]
 
 

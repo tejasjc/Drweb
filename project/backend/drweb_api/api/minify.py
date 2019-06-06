@@ -10,9 +10,9 @@ import os.path
 from csscompressor import compress
 from htmlmin import minify
 from jsmin import jsmin
-dictcss = {'old_size': [], 'new_size': [], 'percentage': [], 'css_comp': 0}
-dictjs = {'old_size': [], 'new_size': [], 'percentage': [], 'js_comp': 0}
-dicthtml = {'old_size': [], 'new_size': [], 'percentage': [], 'html_comp': 0}
+dictcss = {'old_size': [], 'new_size': [], 'percentage': [], 'css_comp': 0,'title':[]}
+dictjs = {'old_size': [], 'new_size': [], 'percentage': [], 'js_comp': 0,'title':[]}
+dicthtml = {'old_size': [], 'new_size': [], 'percentage': [], 'html_comp': 0,'title':[]}
 
 
 def minify_css(file_name, root):
@@ -37,6 +37,7 @@ def CssCompressor(project_path):
 	for root, dirs, files in os.walk(project_path):
 		for file_name in files:
 			if os.path.splitext(file_name)[1].lower() == '.css':
+				dictcss['title'].append(file_name)
 				num += 1
 				minify_css(file_name,root)
 				tot+=dictcss['percentage'][-1]
@@ -68,6 +69,7 @@ def JsCompressor(project_path):
 	for root, dirs, files in os.walk(project_path):
 		for file_name in files:
 			if os.path.splitext(file_name)[1].lower() == '.js':
+				dictjs['title'].append(file_name)
 				num += 1
 				minify_js(file_name,root)
 				tot+=dictjs['percentage'][-1]
@@ -97,6 +99,7 @@ def HtmlCompressor(project_path):
 	for root, dirs, files in os.walk(project_path):
 		for file_name in files:
 			if os.path.splitext(file_name)[1].lower() == '.html':
+				dicthtml['title'].append(file_name)
 				num += 1
 				minify_html(file_name,root)
 				tot+=dicthtml['percentage'][-1]

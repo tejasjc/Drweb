@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import {Card,Popconfirm,Button ,message ,Badge, Icon,Row,Col,Progress} from 'antd';
+import {Card,Popconfirm,Button ,message ,Badge, Icon,Row,Col,Progress,Table} from 'antd';
 import ReactCardFlip from 'react-card-flip';
 export class CardRblockJs extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          imagedata:[],
+          countdata:[],
+          renddata:[],
           isFlipped: false,
           isLoading: true,
       errors: null,
@@ -16,11 +17,11 @@ export class CardRblockJs extends Component {
         this.callImgalgo = this.callImgalgo.bind(this);
       }
       callImgalgo() {
-        fetch(`http://127.0.0.1:8000/api/image/`)
+          fetch(`http://127.0.0.1:8000/api/rendblockjs/`)
           .then(response => response.json())
           .then(data =>
             this.setState({
-              imagedata: data,
+              renddata: data,
               isLoading: false,
               isDone:true
             })
@@ -30,12 +31,12 @@ export class CardRblockJs extends Component {
       }
       handleClick(e) {
         e.preventDefault();
-        message.success('Render Block Js has been initiated.');
+        message.success('Render Block Css has been initiated.');
         
         this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
         if(!this.state.isDone)
         {
-         // this.callImgalgo();
+         this.callImgalgo();
         }
         
       }
@@ -49,57 +50,88 @@ export class CardRblockJs extends Component {
       }
   render() {
     const text = 'Are you sure to initiate this task?';
-    const { isLoading, error,imagedata } = this.state;
-    const om=[imagedata];
-    var avgc=om.map(d => d.avg_comp)[0];
-    var n=Number.parseFloat(Number(avgc)).toPrecision(4);
-    var k=Number(n);
+    const { error,renddata,isLoading} = this.state;
+    var hmap=Object.values(renddata);
+     
+     var coun=hmap[3];
+     var a=[];
+    for(var i=0;i<coun;i++){
+      var d={};
+  d['file']=hmap[0][i];
+  d['count']=hmap[2][i];
+  d['status']=[hmap[1][i]];
+  a.push(d);
+    }
+    console.log("in js",a);
+    const columns = [
+      {
+        title: 'File Name',
+        dataIndex: 'file',
+        key: 'file1',
+      },
+      {
+        title: 'Total request',
+        dataIndex: 'count',
+        key: 'count1',
+        
+      },
+      {
+        title: 'Blocking status',
+        dataIndex: 'status',
+        key: 'status1',
+        render: status => (
+          <span>
+            {status.map(tag => {
+              let color = tag ==='yes' ? 'red' : 'green';
+              let type;
+              if (tag === 'yes') {
+                type = 'close-circle';
+              }else{
+                type='check-circle';
+              }
+              return (
+                <Icon type={type} theme="twoTone" twoToneColor={color} />
+              );
+            })}
+          </span>
+        ),
+      },
+      
+    ];
+    
     return (
       <div>
         <ReactCardFlip isFlipped={this.state.isFlipped}>
         <Card key="front" title="Render Block Js" headStyle={{fontSize:"20px",fontFamily:"system-ui",background:"#ffc107",color:"white"}}>
-        <h3>Finding the optimal settings for your image requires careful analysis along many dimensions: format capabilities, content of encoded data, quality, pixel dimensions, and more.</h3>
+        <h3>whenever the parser encounters a script it has to stop and execute it before it can continue parsing the HTML. In the case of an external script the parser is also forced to wait for the resource to download.</h3>
         
-        <br></br>
-        <h3>There are <Badge count={this.props.img_count} style={{ backgroundColor: '#52c41a' }} /> images in your project that can be optimized.</h3>
-        <br></br>
+        <h3>which may incur one or more network roundtrips and delay the time to first render of the page.</h3>
 
         <Popconfirm placement="right" title={text} onConfirm={this.handleClick} okText="Yes" cancelText="No">
         <Button style={{background:"#ffc107",color:"white"}}><Icon type="rocket" /> Take Action</Button>
         </Popconfirm>
         </Card>
  
-        <Card key="back" title="Render Block Js" style={{ width: 556,height:300 }} headStyle={{fontSize:"20px",fontFamily:"system-ui",background:"#ffc107",color:"white"}}>
-        
+        <Card key="back" title="Render Block Js" style={{ width: 556,height:300,overflowY: 'scroll' }} headStyle={{fontSize:"20px",fontFamily:"system-ui",background:"#ffc107",color:"white"}}>
+        <div style={{height:300,overflowY: 'scroll' }}>
+{!isLoading ? (
+  <Row style={{textAlign:"center"}} gutter={16}>
+    <Col>
+    <Table dataSource={a} columns={columns} />;
+    </Col>
+    
+     </Row>
+   
+ ) : (
+   <h3>
+    
+     <Icon type="loading" /> Loading result...
+     <br/>
+It will take longer than usual...
+   </h3>
+ )}
+          </div>
           
-          {!isLoading ? (
-             <Row style={{textAlign:"center"}} gutter={16}>
-                <Col span={8} style={{textAlign:"center"}}>
-                <Progress type="circle" percent={10} width={80} />
-                <br></br>
-                <hr></hr>
-                <h4>Total Files</h4>
-                </Col>
-                <Col span={8} style={{textAlign:"center"}}>
-                <Progress type="circle" percent={23}  width={80}/>
-                <br></br>
-                <hr></hr>
-                <h4>Size saved</h4>
-                </Col>
-                <Col span={8} style={{textAlign:"center"}}>
-                <Progress type="circle" percent={k}  width={80}/>
-                <br></br>
-                <hr></hr>
-                <h4>Average Compression</h4>
-                </Col>
-                </Row>
-              
-            ) : (
-              <h3>
-               
-                <Icon type="loading" /> Loading result...
-              </h3>
-            )}
         
         <Row style={{marginTop:"40px" , textAlign:"right"}}>
           <Button onClick={this.handleBack}>Back</Button>

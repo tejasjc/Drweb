@@ -93,7 +93,7 @@ export class Info extends Component {
                 <h4 style={{ fontFamily: "system-ui", textAlign: "center" }}>
                   Dr.Web is intelligent platform where you can upload your web
                   application project and Dr.Web will provide you optmiztion
-                  that will boost your web experence.
+                  that will boost your web experince.
                 </h4>
               </Card>
             </div>
@@ -107,35 +107,40 @@ export class Info extends Component {
               <Card title="How does Dr.Web do this ?">
                 <Row gutter={16}>
                   <Col span={8}>
-                    <Card title="Html minifier">Html minifier</Card>
+                    <Card title="Html minifier">Minification is the process of removing whitespace and any codethat is not necessary to create a smaller but perfectly valid code file.
+                    </Card>
                   </Col>
                   <Col span={8}>
-                    <Card title="Css Minifier">Css Minifier</Card>
+                    <Card title="Css Minifier">Minification is the process of removing whitespace and any code that is not necessary to create a smaller but perfectly valid code file.
+                    </Card>
                   </Col>
                   <Col span={8}>
-                    <Card title="Js Optimization">Information here...</Card>
-                  </Col>
-                </Row>
-                <Row gutter={16} style={{ marginTop: "40px" }}>
-                  <Col span={8}>
-                    <Card title="Javascripts async">Information here...</Card>
-                  </Col>
-                  <Col span={8}>
-                    <Card title="Leverage browser caching">Information here...</Card>
-                  </Col>
-                  <Col span={8}>
-                    <Card title="Image Optimization">Information here...</Card>
+                    <Card title="Js Optimization"> Delivering less JavaScript can mean less time in network transmission, less spent decompressing code and less time parsing and compiling this JavaScript.</Card>
                   </Col>
                 </Row>
                 <Row gutter={16} style={{ marginTop: "40px" }}>
                   <Col span={8}>
-                    <Card title="Remove unused CSS">Information here...</Card>
+                    <Card title="Javascripts async">If we want script tags to load asynchronously, or to defer until the rest of the page has finished loading, we can add the async or defer attributes.</Card>
                   </Col>
                   <Col span={8}>
-                    <Card title="Handle bad requests">Information here...</Card>
+                    <Card title="Leverage browser caching">To leverage your browser's caching generally means that you can specify how long web browsers should keep images, CSS and JS stored locally. </Card>
                   </Col>
                   <Col span={8}>
-                    <Card title="Render blocking  JS/CSS">Information here...</Card>
+                    <Card title="Image Optimization">Finding the optimal settings for your image requires careful analysis along many dimensions: format capabilities, content of encoded data, quality, pixel dimensions, and more.
+                    </Card>
+                  </Col>
+                </Row>
+                <Row gutter={16} style={{ marginTop: "40px" }}>
+                  <Col span={8}>
+                    <Card title="Remove unused CSS">There’s a good chance that website contains CSS that have no impact on current page elements.Unused CSS just adds dead weight to your applications.</Card>
+                  </Col>
+                  <Col span={8}>
+                    <Card title="Handle bad requests">Bad Request means that the request you sent to the website server, often something simple like a request to load a web page, was somehow incorrect or corrupted and the server couldn't understand it.</Card>
+                  </Col>
+                  <Col span={8}>
+                    <Card title="Render blocking  JS/CSS">Whenever the parser encounters a linked css it has to stop and execute it before it can continue parsing the HTML. In the case of an external css the parser is also forced to wait for the resource to download.
+        
+        which may incur one or more network roundtrips and delay the time to first render of the page</Card>
                   </Col>
                 </Row>
               </Card>

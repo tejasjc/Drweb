@@ -45,7 +45,7 @@ export class CardJs extends Component {
   }
   render() {
     const text = "Are you sure to initiate this task?";
-    const { isLoading, error,jsdata } = this.state;
+    const { isLoading,jsdata } = this.state;
     const om=[jsdata];
     var avgc=om.map(d => d.js_comp)[0];
     var n=Number.parseFloat(Number(avgc)).toPrecision(4);

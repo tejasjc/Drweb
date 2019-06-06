@@ -3,6 +3,7 @@ import { Route,withRouter } from "react-router-dom";
 import "antd/dist/antd.css";
 import Layouts from "./Layout";
 import Analysis_count from "./Analysis_count";
+import visulize from "./Visualize";
 
 
 export class Stat extends Component {
@@ -14,10 +15,9 @@ export class Stat extends Component {
   render() {
     return (
       <Layouts>
-       
+      
         <Route path="/stat/analysis_count" component={withRouter(Analysis_count)} />
-        
-        
+        <Route path="/stat/visulize" component={withRouter(visulize)} />
       </Layouts>
     );
   }

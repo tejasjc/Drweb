@@ -19,6 +19,7 @@ export class home extends Component {
                   <div className="circle__content">
                     Dr.Web
                     <br />
+                    <h6 style={{ fontFamily: "Brushstroke, fantasy",color:"white" }}>Boost Your Web Experince</h6>
                     <Button size={this.state.size}>
                       <Link to="/main">Get Started</Link>
                     </Button>
