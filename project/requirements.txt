@@ -2,7 +2,7 @@ beautifulsoup4==4.7.1
 certifi==2019.3.9
 chardet==3.0.4
 csscompressor==0.9.5
-Django==2.1.7
+Django==2.2.10
 django-cors-headers==2.5.0
 djangorestframework==3.9.2
 htmlmin==0.1.12
