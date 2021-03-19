@@ -4,7 +4,7 @@ chardet==3.0.4
 csscompressor==0.9.5
 Django==2.1.7
 django-cors-headers==2.5.0
-djangorestframework==3.9.2
+djangorestframework==3.11.2
 htmlmin==0.1.12
 idna==2.8
 image==1.5.27
