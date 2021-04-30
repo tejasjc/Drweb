@@ -13,4 +13,4 @@ Pillow==5.4.1
 pytz==2018.9
 requests==2.22.0
 soupsieve==1.9.1
-urllib3==1.25.3
+urllib3==1.25.8
