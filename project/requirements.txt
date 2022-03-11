@@ -9,7 +9,7 @@ htmlmin==0.1.12
 idna==2.8
 image==1.5.27
 jsmin==2.2.2
-Pillow==5.4.1
+Pillow==9.0.1
 pytz==2018.9
 requests==2.22.0
 soupsieve==1.9.1
